@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo App | MVC with jQuery</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/material.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+<body>
+  <main>
+    
+    <div class="todo__wrapper">
+
+      <div class="todo__content">
+        <div class="mdl-list todo__items js-list__box">
+        </div>
+      </div>
+
+
+      <!-- モーダル -->
+      <div class="todo__modal js-modal__box" data-modal="todo__add">
+        <div class="todo__modal__bg js-modal--close"></div>
+        <div class="todo__modal__content">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="todo__title">
+            <label class="mdl-textfield__label" for="todo__title">Title ...</label>
+          </div>
+    
+          <div class="mdl-textfield mdl-js-textfield">
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="todo__desc" ></textarea>
+            <label class="mdl-textfield__label" for="todo__desc">Description ...</label>
+          </div>
+    
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent js-btn--submit js-modal--close">
+            Add
+          </button>      
+        </div>
+      </div>
+
+      <!-- 追加ボタン -->
+      <div class="todo__add">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored js-btn--add" data-modal="todo__add">
+          <i class="material-icons">add</i>
+        </button>        
+      </div>
+
+    </div>
+
+  </main>
+  
+  <script src="./assets/js/libs/jquery-3.2.1.min.js"></script>
+  <script src="./assets/js/libs/material.min.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+body{
+  visibility: hidden;
+  opacity: 0;
+  background: transparent;
+  transition: 0.3s all;
+}
+body.is-visible{
+  background: #4285f4;  
+}
+
+.todo__wrapper{
+  padding: 50px 0;
+  margin: 0 auto;
+  width: 64%;
+  transition: 0.3s all;
+}
+@media screen and (max-width: 640px){
+  .todo__wrapper{
+    padding: 30px 0;
+    width: 94%;
+  }
+}
+
+.todo__content{
+  background: #4285f4;
+  transform: scale(0);
+  transition: 0.2s all ease-in-out;
+}
+.todo__content.has-shadow{
+  background: #fff;
+  transform: scale(1);
+}
+
+
+.todo__items{
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s all;
+}
+.todo__item{
+  background: #fff;
+  display: block;
+  padding: 0;
+  transform: scale(0);
+  transform-origin: 0 50%;
+  transition: 0.3s all;
+}
+.todo__items.is-visible .todo__item{
+  transform: scale(1);
+}
+.todo__items.is-visible .todo__item:hover{
+  position: relative;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  transform: scale(1.02);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);    
+}
+.todo__items.is-visible .todo__item.is-removed{
+  transform: scale(0);
+  height: 0;
+}
+
+
+.todo__detail{
+  position: relative;
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s max-height;
+  border-bottom: 1px solid #eee;
+}
+.todo__detail.is-open{
+  max-height: 600px;
+}
+
+
+.mdl-list__item-primary-content{
+  margin: 0;
+  padding: 16px;
+}
+.mdl-list__item-primary-content:last-child .todo__detail{
+  border-bottom: none;
+}
+
+.mdl-list__item-primary-content p{
+  margin: 0;
+  width: 100%;
+  font-size: 18px;
+  line-height: 40px;
+}
+.mdl-list__item{
+  min-height: auto;
+}
+
+.mdl-button--fab{
+  position: relative;
+  float: right;
+  margin: 0;
+  z-index: 2;
+  background: transparent;
+  box-shadow: none;
+}
+.mdl-list .mdl-button .material-icons{
+  transform: rotate(45deg);
+  transform-origin: 80% -30%;
+}
+
+.todo__modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: 0.3s all;
+}
+.todo__modal.is-show{
+  transform: scale(1);
+}
+.todo__modal__bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  background: rgba(0, 0, 0, 0.5);
+}
+.todo__modal__content{
+  position: absolute;
+  background: #fff;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 64%;
+  height: 300px;
+  padding: 4%;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 640px){
+  .todo__modal__content{
+    padding: 30px 10px;
+    width: 94%;
+  }
+}
+.todo__modal__content .mdl-textfield{
+  display: block;
+  width: 100%;
+}
+.todo__modal__content .mdl-button{
+  display: block;
+  margin: 0 auto;
+}
+
+
+.todo__add{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.todo__add .mdl-button.is-active .material-icons{
+  transform: rotate(45deg);
+  transform-origin: 80% -30%;
+}
+
+
+.is-visible{
+  visibility: visible;
+  opacity: 1;
+}
+
+.has-shadow{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);    
+}
